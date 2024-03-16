@@ -3,13 +3,16 @@
 namespace hw_attributes.Services
 {
     [Help]
-    [IgicService(ServiceType.CLASS)]
+    [IgicService]
     public class Service1 : IService1
     {
+        public string GetHelloWorld()
+        {
+            return "Hello World From IService1";
+        }
     }
-    
-    [IgicService(ServiceType.INTERFACE)]
     public interface IService1
     {
+        public string GetHelloWorld();
     }
 }

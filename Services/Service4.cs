@@ -2,12 +2,10 @@
 
 namespace hw_attributes.Services
 {
-    [IgicService(ServiceType.CLASS)]
+    [IgicService]
     public class Service4 : Service3, IService4
     {
     }
-
-    [IgicService(ServiceType.INTERFACE)]
     public interface IService4
     {
     }

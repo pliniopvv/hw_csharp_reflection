@@ -2,16 +2,8 @@
 {
     public class IgicServiceAttribute : Attribute
     {
-        public ServiceType serviceType;
-        public IgicServiceAttribute(ServiceType type)
+        public IgicServiceAttribute()
         {
-            this.serviceType = type;
         }
-    }
-
-    public enum ServiceType
-    {
-        CLASS,
-        INTERFACE
     }
 }

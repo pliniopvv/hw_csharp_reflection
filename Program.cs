@@ -54,6 +54,7 @@ internal class Program
                             Startup.Configure(builder.Services, type, _type);
                         }
                 }
+                Console.WriteLine("#");
             }
         }
 
@@ -63,6 +64,36 @@ internal class Program
         // #                                                                                                    #
         // #                                                                                                    #
         // ######################################################################################################
+
+        // ######################################################################################################
+        foreach (var type in types)
+        {
+            Console.Write(" Classe -------------------- > ");
+            Console.Write(type.Name);
+            Console.Write(" ");
+            Console.Write(type.BaseType);
+            Console.Write(" ");
+            Console.Write(" | ");
+
+            var _type = type.BaseType;
+
+            if (_type != null)
+            {
+                var generics = _type.GetGenericArguments();
+                foreach (var item in generics)
+                {
+                    Console.Write(_type.Name + "<" + item.Name + ">");
+                }
+            }
+            Console.WriteLine(" \t\t\t# ");
+
+            /*foreach (MemberInfo member in type.GetMembers())
+            {
+                Console.WriteLine("MemberInfo   >>   " + member.Name);
+            }*/
+        }
+        // ######################################################################################################
+
 
         // Add services to the container.
         builder.Services.AddControllers();
